@@ -1,7 +1,9 @@
 import React from 'react'
-import { FaRegHeart } from "react-icons/fa";
+import { FaRegHeart, FaRegComment } from "react-icons/fa";
 import { BsPlusLg } from "react-icons/bs";
 import { TiTick } from "react-icons/ti";
+import { FaArrowRightArrowLeft } from "react-icons/fa6";
+import { CiShare1 } from "react-icons/ci";
 
 
 const Navbar = () => {
@@ -14,6 +16,32 @@ const Navbar = () => {
         { id: 6, img: 'https://img.etimg.com/thumb/width-1200,height-1200,imgsize-80284,resizemode-75,msid-90911048/magazines/panache/kgf-chapter-2-hindi-to-break-record-of-baahubali-2-and-become-the-fastest-film-to-enter-rs-200-cr-club.jpg', name: 'Roshan' },
         { id: 7, img: 'https://www.bollywoodhungama.com/wp-content/uploads/2022/04/4fed31f9-4214-4c0d-a5d7-e6753119640f.jpg', name: 'Yash' },
     ]
+
+
+    const posts = [
+        {
+            id: 1,
+            profileImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHnR4VCbXGXAazWbjuURO_mdAtbROPIhswfg&s",
+            name: "Rahulyadav",
+            verify: true,
+            song: "Tejo babo aav lo 🎵"
+        },
+        {
+            id: 2,
+            profileImg: "https://media.gettyimages.com/id/87859501/photo/cannes-france-indian-bollywood-actor-hrithik-roshan-is-seen-on-may-15-2009-in-cannes-france.jpg?s=612x612&w=gi&k=20&c=saxqupgtattcIpLof2vypdsiHeCo4C_clMWtIEGD3ZM=",
+            name: "Vikas",
+            verify: false,
+            song: "Dil garden garden 🎧"
+        },
+        {
+            id: 3,
+            profileImg: "https://m.media-amazon.com/images/I/51fY0wjRGTL._AC_UF894,1000_QL80_.jpg",
+            name: "Priya",
+            verify: true,
+            song: "Tere bin nahi lagda ❤️"
+        }
+    ]
+
     return (
         <>
             <div className='flex justify-around mt-10 text-2xl font-bold'>
@@ -30,21 +58,32 @@ const Navbar = () => {
                 )}
             </div>
 
+            {posts.map(post =>
+                <div key={post.id}>
+                    <div className='back_img'>
+                        <div className='flex gap-2 p-2'>
+                            <img className='rounded-full w-[70px] h-[70px] border-4 border-red-600 cursor-pointer' src={post.profileImg} />
 
-            <div className='back_img'>
-                <div className='flex gap-2 p-2'>
-                    <img className='rounded-full w-[70px] h-[70px] border-4 border-red-600 cursor-pointer' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHnR4VCbXGXAazWbjuURO_mdAtbROPIhswfg&s" alt="" />
-                    <div>
-                        <p className='flex text-white'>Rahulyadav <span className='text-2xl'><TiTick /></span></p>
-                        <p className='text-white'>Tejo babo aav lo 🎵</p>
+                            <div>
+                                <p className='flex text-white'> {post.name} {post.verify && <span className='text-2xl'><TiTick /></span>}</p>
+                                <p className='text-white'>{post.song}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='flex text-2xl gap-10 mt-2 ml-[300px]'>
+                        <p className='flex'><FaRegHeart /> <span className='text-sm font-black'>2.5k</span></p>
+                        <p className='flex gap-1'><FaRegComment /><span className='text-sm font-bold'>300</span></p>
+                        <p><FaArrowRightArrowLeft /></p>
+                        <p><CiShare1 /></p>
                     </div>
                 </div>
-            </div>
-            <div>
-                <p><FaRegHeart /></p>
-            </div>
+            )}
+
+
         </>
     )
 }
 
 export default Navbar
+
