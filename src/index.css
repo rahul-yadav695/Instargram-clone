@@ -1,1 +1,14 @@
 @import "tailwindcss";
+
+.back_img{
+    background-image: url(https://images.indianexpress.com/2022/05/kgf-2-box-office-.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width:40%;
+    height: 70vh;
+    padding: 1px;
+    margin-top: 30px;
+    margin-left: 300px;
+    border-radius: 20px;
+}
