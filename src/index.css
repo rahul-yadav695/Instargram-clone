@@ -1,15 +1,37 @@
 @import "tailwindcss";
 
+
+
 .back_img{
-    background-image: url(https://images.indianexpress.com/2022/05/kgf-2-box-office-.jpg);
+    background-image: url("https://images.indianexpress.com/2022/05/kgf-2-box-office-.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    width:40%;
-    height: 70vh;
-    padding: 1px;
-    margin-top: 30px;
-    margin-left: 300px;
+    
+    width: 100%;         
+    height: 350px;       
     border-radius: 20px;
     cursor: pointer;
+    margin-top: 20px;
+}
+
+.shrink{
+    flex-shrink: 0;
+}
+ 
+@media (min-width: 768px) {
+    .back_img {
+        width: 90%;
+        height: 500px;
+        margin: auto;
+        margin-top: 25px;
+    }
+} 
+@media (min-width: 1024px) {
+    .back_img {
+        width: 70%;
+        height: 650px;
+        margin: auto;
+        margin-top: 40px;
+    }
 }
